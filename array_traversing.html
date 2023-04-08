@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getElement(){
+            let data = [23, 26, 34, 41, 46, 70, 94, 128, 148, 169, 173, 177, 182, 193, 194];
+            let inputValue = document.getElementById("elementPosition").value;
+            if(inputValue <= data.length && (typeof parseInt(inputValue) === "number")){
+                alert(data[inputValue]);
+            }else{
+                alert("enter valid input");
+            }
+        }
+    </script>
+</head>
+<body>
+    <strong>Open Console to view output</strong>
+    <br>
+    <input type="text" name="elementPosition" id="elementPosition">
+    <input type="button" value="Get Element" onclick="getElement()">
+</body>
+</html>
