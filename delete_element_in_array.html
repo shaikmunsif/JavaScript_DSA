@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Element In a Array</title>
+    <script>
+        function deleteElement(){
+            let data = [1,2,3,4,5,6,7]; //  data before element deletion
+            console.log(data);
+            let position = parseInt(document.getElementById("deletePosition").value);
+            for(let i = position; i<data.length-1;i++){
+                data[i] = data[i+1];
+            }
+            data.length = data.length-1;
+            console.log(data); // data after element deletion
+            document.getElementById("data").innerText = data;
+        }
+    </script>
+</head>
+<body>
+    <strong>Delete Element In Array</strong>
+    <br>
+    <input type="text" name="deleteElement" id="deletePosition" placeholder="Enter element position to delete">
+    <button onclick="deleteElement()">
+        Delete
+    </button>
+    <br>
+    <h6 id="data"></h6>
+</body>
+</html>
