@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         var data = [10, 20, 30, 40, 50, 60];
+        function insertElement(){
+            let inputValue = document.getElementById("insertElement").value;
+            let position = parseInt(document.getElementById("elementPosition").value);
+            for(let i=data.length-1; i >= 0 ; i--){
+                if(i >= position){
+                    data[i+1] = data[i];
+                    if(i == position){
+                        data[i] = inputValue;
+                    }
+                }
+            }
+            document.getElementById("data").innerText = data;
+            console.log(data);
+
+            // // using default function
+            // data.splice(position, 0, inputValue);
+            // console.log(data);
+        }
+    </script>
+</head>
+<body>
+    <strong>Inserting Element in an array</strong>
+    <br>
+    <input type="text" name="element" id="insertElement" placeholder="Enter element">
+    <input type="text" name="elementPosition" id="elementPosition" placeholder="Enter position">
+    <button onclick="insertElement()">
+        Insert
+    </button>
+    <br>
+    <h6 id="data"></h6>
+</body>
+</html>
